@@ -1,14 +1,17 @@
-
+import {useState} from "react";
 import './App.css'
 
 const Card = ({title}) => {
-    return (
-        <div style={{
-            border: '1px solid #4b5362',
-            padding: '20px'
 
-        }}>
+    const [hasLiked, setHasLiked] = useState(false)
+
+    return (
+        <div className="card">
             <h2>{title}</h2>
+
+            <button onClick={() => setHasLiked(!hasLiked)}>
+                {hasLiked ? 'Liked' : 'Like'}
+            </button>
         </div>
     )
 }
